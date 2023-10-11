@@ -6,7 +6,7 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:53:33 by misargsy          #+#    #+#             */
-/*   Updated: 2023/10/06 04:12:59 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/10/12 01:17:31 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strcat(char *dest, const char *src);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *str1, const char *str2, size_t count);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);

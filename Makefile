@@ -6,7 +6,7 @@
 #    By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 17:19:47 by misargsy          #+#    #+#              #
-#    Updated: 2023/10/06 04:12:03 by misargsy         ###   ########.fr        #
+#    Updated: 2023/10/12 01:13:19 by misargsy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,10 @@ LIBFT =	ft_isalpha.c \
 		ftpf_fparse.c \
 		ftpf_is.c \
 		util1.c \
-		util2.c
+		util2.c \
+		\
+		get_next_line_utils.c \
+		get_next_line.c
 
 NAME = libft.a
 
