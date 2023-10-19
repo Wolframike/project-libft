@@ -6,7 +6,7 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 23:01:23 by misargsy          #+#    #+#             */
-/*   Updated: 2023/10/06 04:13:46 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/10/19 08:58:28 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <limits.h>
 # include <stdbool.h>
 # include <unistd.h>
+# include <stdint.h>
 
 # define HEX_NUM_LC "0123456789abcdef"
 # define HEX_NUM_UC "0123456789ABCDEF"
@@ -74,7 +75,6 @@ int				ftpf_print_hex(t_format *fstruct,
 					unsigned int n, const char *base);
 int				ftpf_print_hash(unsigned long n, bool upper, t_format *fstruct);
 
-int				numcatch(const char *str);
 unsigned int	ft_atoui(const char *str);
 void			ftpf_ps_cap(char *str, int fd, t_format *fstruct);
 void			ft_putunbr_fd(uintmax_t n, const char *base, int fd);

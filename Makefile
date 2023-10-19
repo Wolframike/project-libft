@@ -6,7 +6,7 @@
 #    By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 17:19:47 by misargsy          #+#    #+#              #
-#    Updated: 2023/10/12 01:13:19 by misargsy         ###   ########.fr        #
+#    Updated: 2023/10/19 08:54:22 by misargsy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,22 +70,22 @@ LIBFT =	ft_isalpha.c \
 
 NAME = libft.a
 
-SRCS = $(addprefix libft/, $(LIBFT))
+SRCS = $(addprefix srcs/, $(LIBFT))
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+	@ar -rc $(NAME) $(OBJS)
 
 %.o: %.c
-	cc $(FLAGS) -c $< -o $@
+	@cc $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME) $(LIBFT)
+	@rm -f $(NAME) $(LIBFT)
 
 re:	fclean	all
 
