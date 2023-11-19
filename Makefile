@@ -6,7 +6,7 @@
 #    By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 17:19:47 by misargsy          #+#    #+#              #
-#    Updated: 2023/11/19 22:46:46 by misargsy         ###   ########.fr        #
+#    Updated: 2023/11/19 23:45:34 by misargsy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,17 @@ PRINTF =
 
 NAME = libft.a
 
+GRAY		= \033[1;37m
+CYAN		= \033[1;36m
+MAGENTA		= \033[1;35m
+BLUE		= \033[1;34m
+YELLOW		= \033[1;33m
+GREEN		= \033[1;32m
+RED			= \033[1;31m
+RESET		= \033[0m
+MAX			= 50
+CONVERSION	= %-$(MAX).$(MAX)s\r
+
 SRCSDIR = srcs
 OBJSDIR = objs
 SRCS = $(patsubst %.c, $(SRCSDIR)/%.c, $(LIBFT) $(GNL) $(PRINTF))
@@ -62,16 +73,23 @@ OBJS = $(patsubst %.c, $(OBJSDIR)/%.o, $(LIBFT) $(GNL) $(PRINTF))
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@printf "$(YELLOW)Compiling $@... $(CONVERSION)$(RESET)"
 	@ar -rc $(NAME) $(OBJS)
+	@printf "$(GREEN)⪼ ⪼ $(NAME): compilation done ⪻ ⪻$(CONVERSION)$(RESET)\n"
 
 $(OBJSDIR)/%.o: $(SRCSDIR)/%.c
+	@mkdir -p $(OBJSDIR)
+	@printf "$(MAGENTA)Compiling $@... $(CONVERSION)$(RESET)"
 	@cc $(FLAGS) -c $< -o $@
 
 clean:
+	@rm -rf $(OBJSDIR)
 	@rm -f $(OBJS)
+	@printf "$(RED)Removed $(OBJSDIR)$(RESET)\n"
 
 fclean: clean
 	@rm -f $(NAME)
+	@printf "$(RED)Removed $(NAME)$(RESET)\n"
 
 re: fclean all
 
