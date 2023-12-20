@@ -6,7 +6,7 @@
 #    By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 17:19:47 by misargsy          #+#    #+#              #
-#    Updated: 2023/11/19 23:45:34 by misargsy         ###   ########.fr        #
+#    Updated: 2023/12/20 21:04:59 by misargsy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,13 @@ LIBFT =		ft_isalpha.c \
 GNL = 		get_next_line_utils.c \
 			get_next_line.c
 
-PRINTF = 
+PRINTF =	ft_printf.c \
+			printf_get_format.c \
+			print_int.c \
+			print_uint.c \
+			print_csp.c \
+			print_hex.c \
+			printf_utils.c
 
 NAME = libft.a
 
@@ -74,21 +80,21 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@printf "$(YELLOW)Compiling $@... $(CONVERSION)$(RESET)"
-	@ar -rc $(NAME) $(OBJS)
-	@printf "$(GREEN)⪼ ⪼ $(NAME): compilation done ⪻ ⪻$(CONVERSION)$(RESET)\n"
+	@$(AR) -rc $(NAME) $(OBJS)
+	@printf "$(GREEN)⪼ $(NAME): compilation done ⪻$(CONVERSION)$(RESET)\n"
 
 $(OBJSDIR)/%.o: $(SRCSDIR)/%.c
 	@mkdir -p $(OBJSDIR)
 	@printf "$(MAGENTA)Compiling $@... $(CONVERSION)$(RESET)"
-	@cc $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJSDIR)
-	@rm -f $(OBJS)
-	@printf "$(RED)Removed $(OBJSDIR)$(RESET)\n"
+	@$(RM) -r $(OBJSDIR)
+	@$(RM) $(OBJS)
+	@printf "$(RED)Removed $(NAME)'s object files$(RESET)\n"
 
 fclean: clean
-	@rm -f $(NAME)
+	@$(RM) $(NAME)
 	@printf "$(RED)Removed $(NAME)$(RESET)\n"
 
 re: fclean all
