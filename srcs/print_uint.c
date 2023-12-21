@@ -6,11 +6,11 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 06:20:05 by misargsy          #+#    #+#             */
-/*   Updated: 2023/12/18 04:38:13 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:27:52 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf_internal.h"
 
 static int	uint_prefix(const t_format format, size_t len)
 {

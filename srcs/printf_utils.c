@@ -6,11 +6,11 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:49:49 by misargsy          #+#    #+#             */
-/*   Updated: 2023/12/18 05:15:54 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:27:52 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf_internal.h"
 
 bool	has_flag(const int flag, const int flagmacro)
 {

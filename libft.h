@@ -6,16 +6,19 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 00:53:33 by misargsy          #+#    #+#             */
-/*   Updated: 2023/11/19 22:21:55 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:29:47 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include "ft_printf.h"
-# include "get_next_line.h"
 # include <unistd.h>
 # include <stdlib.h>
+
+int		ft_printf(const char *format, ...);
+int		ft_dprintf(const int fd, const char *format, ...);
+
+char	*get_next_line(int fd);
 
 void	*ft_memset(void *dest, int c, size_t count);
 void	ft_bzero(void *s, size_t n);
@@ -48,8 +51,6 @@ char	*ft_strjoin(const char *s1, const char *s2);;
 char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(const char *str, char c);
 char	*ft_itoa(int n);
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);

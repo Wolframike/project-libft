@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   printf_internal.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 17:33:05 by misargsy          #+#    #+#             */
-/*   Updated: 2023/12/20 21:00:21 by misargsy         ###   ########.fr       */
+/*   Created: 2023/12/21 15:25:18 by misargsy          #+#    #+#             */
+/*   Updated: 2023/12/21 15:29:53 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef PRINTF_INTERNAL_H
+# define PRINTF_INTERNAL_H
 
 # include "libft.h"
 # include <stdarg.h>
@@ -42,9 +42,6 @@ typedef struct s_format
 	size_t	prec;
 	size_t	width;
 }	t_format;
-
-// ft_printf.c
-int		ft_printf(const char *format, ...);
 
 // printf_get_format.c
 void	get_format(const char **format, const int fd, t_format *data);

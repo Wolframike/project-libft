@@ -6,11 +6,11 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 03:00:42 by misargsy          #+#    #+#             */
-/*   Updated: 2023/12/18 05:27:25 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:27:52 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf_internal.h"
 
 static void	get_flags(const char **format, t_format *data)
 {

@@ -6,11 +6,11 @@
 #    By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 17:19:47 by misargsy          #+#    #+#              #
-#    Updated: 2023/12/20 21:04:59 by misargsy         ###   ########.fr        #
+#    Updated: 2023/12/21 15:44:56 by misargsy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Wextra -Werror -Iincludes
+FLAGS = -Wall -Wextra -Werror -I. -Iincludes
 LIBFT =		ft_isalpha.c \
 			ft_isdigit.c \
 			ft_isalnum.c \

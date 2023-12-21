@@ -6,11 +6,11 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 18:19:35 by misargsy          #+#    #+#             */
-/*   Updated: 2023/12/18 06:04:55 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:27:52 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf_internal.h"
 
 static void	putnbr_without_sign(const int num, const int fd)
 {

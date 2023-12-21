@@ -6,11 +6,11 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 08:05:33 by misargsy          #+#    #+#             */
-/*   Updated: 2023/10/12 01:15:16 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:28:27 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "gnl_internal.h"
 
 char	*gnl_strjoin(char *s1, const char *s2)
 {

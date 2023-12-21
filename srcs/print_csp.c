@@ -6,11 +6,11 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 07:19:11 by misargsy          #+#    #+#             */
-/*   Updated: 2023/12/18 06:10:47 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:27:52 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf_internal.h"
 
 int	print_char(const t_format format, const char c)
 {
