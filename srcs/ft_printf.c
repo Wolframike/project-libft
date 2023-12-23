@@ -6,7 +6,7 @@
 /*   By: misargsy <misargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:32:53 by misargsy          #+#    #+#             */
-/*   Updated: 2023/12/21 15:27:52 by misargsy         ###   ########.fr       */
+/*   Updated: 2023/12/23 17:31:06 by misargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,58 +52,49 @@ static int	print_in_format_text(const char **format, const int fd)
 	return (chars_printed);
 }
 
-int	ft_printf(const char *format, ...)
+static int	doprint(const int fd, const char *format, va_list args)
 {
-	va_list		args;
 	t_format	data;
 	int			chars_printed;
 
 	chars_printed = 0;
-	va_start(args, format);
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
 			if (*format == '\0')
-				return (va_end(args), -1);
-			get_format(&format, STDOUT_FILENO, &data);
-			chars_printed += print_single_conversion(data, args, *format);
-		}
-		else
-			chars_printed += print_in_format_text(&format, STDOUT_FILENO);
-		if (chars_printed < 0)
-			return (va_end(args), -1);
-		format++;
-	}
-	va_end(args);
-	return (chars_printed);
-}
-
-int	ft_dprintf(const int fd, const char *format, ...)
-{
-	va_list		args;
-	t_format	data;
-	int			chars_printed;
-
-	chars_printed = 0;
-	va_start(args, format);
-	while (*format != '\0')
-	{
-		if (*format == '%')
-		{
-			format++;
-			if (*format == '\0')
-				return (va_end(args), -1);
+				return (-1);
 			get_format(&format, fd, &data);
 			chars_printed += print_single_conversion(data, args, *format);
 		}
 		else
 			chars_printed += print_in_format_text(&format, fd);
 		if (chars_printed < 0)
-			return (va_end(args), -1);
+			return (-1);
 		format++;
 	}
+	return (chars_printed);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int		chars_printed;
+
+	va_start(args, format);
+	chars_printed = doprint(STDOUT_FILENO, format, args);
+	va_end(args);
+	return (chars_printed);
+}
+
+int	ft_dprintf(const int fd, const char *format, ...)
+{
+	va_list	args;
+	int		chars_printed;
+
+	va_start(args, format);
+	chars_printed = doprint(fd, format, args);
 	va_end(args);
 	return (chars_printed);
 }
